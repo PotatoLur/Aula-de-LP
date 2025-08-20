@@ -60,5 +60,13 @@ public class TesteCarro {
         } else {
             System.out.println("São diferentes!");
         }
+        
+        Carro fusca3 = fusca;
+        if (fusca == fusca3){
+            System.out.println("São iguais!");
+        } else {
+            System.out.println("São diferentes!");
+        }
+
     }
 }
