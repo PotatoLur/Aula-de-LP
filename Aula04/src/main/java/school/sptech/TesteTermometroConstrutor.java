@@ -2,8 +2,8 @@ package school.sptech;
 
 public class TesteTermometroConstrutor {
     public static void main(String[] args) {
-        TermometroEncapsulado term1 = new TermometroEncapsulado();
-        TermometroEncapsulado term2 = new TermometroEncapsulado();
+        TermometroConstrutor term1 = new TermometroConstrutor(0.0, 0.0, 0.0);
+        TermometroConstrutor term2 = new TermometroConstrutor(10.0, 10.0, 10.0);
 
         System.out.println(term1);
 

@@ -1,9 +1,27 @@
 package school.sptech;
 
 public class TermometroConstrutor {
-    private Double temperaturaAtual = 0.0;
-    private Double temperaturaMinRegistrada = 0.0;
-    private Double temperaturaMaxRegistrada = 0.0;
+    private Double temperaturaAtual;
+    private Double temperaturaMinRegistrada;
+    private Double temperaturaMaxRegistrada;
+
+    // Construtor:
+    // Construtor vazio
+    public TermometroConstrutor() {
+        System.out.println("Criando um termômetro.");
+    }
+
+    public TermometroConstrutor(Double temperaturaAtual) {
+        this.temperaturaAtual = temperaturaAtual;
+    }
+
+    //Construtor cheio - Alt+Insert -> Constructor
+    public TermometroConstrutor(Double temperaturaAtual, Double temperaturaMinRegistrada, Double temperaturaMaxRegistrada) {
+        this();
+        this.temperaturaAtual = temperaturaAtual;
+        this.temperaturaMinRegistrada = temperaturaMinRegistrada;
+        this.temperaturaMaxRegistrada = temperaturaMaxRegistrada;
+    }
 
     public void aumentarTemperatura(Double valor) {
         if (valor == null || valor <= 0) {
