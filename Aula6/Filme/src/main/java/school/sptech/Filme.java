@@ -8,15 +8,25 @@ public class Filme {
     private Double avaliacao;
     private Integer quantidadeAssistida;
 
-    public Filme(Integer id, String nome, String genero, String diretor, Double avaliacao) {
+    public Filme(Integer id, String nome, String genero, String diretor, Double avaliacao, Integer quantidadeAssistida) {
         this.id = id;
         this.nome = nome;
         this.genero = genero;
         this.diretor = diretor;
         this.avaliacao = avaliacao;
-        this.quantidadeAssistida = 0;
+        this.quantidadeAssistida = quantidadeAssistida;
     }
 
+    @Override
+    public String toString() {
+        return "FILME -> " +
+                "ID=" + id +
+                ", Nome: " + nome +
+                ", Gênero: " + genero +
+                ", Diretor: " + diretor +
+                ", Avaliacao: " + avaliacao +
+                ", Quantidade Assistida: " + quantidadeAssistida;
+    }
 
     public Integer getId() {
         return id;
