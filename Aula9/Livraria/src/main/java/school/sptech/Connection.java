@@ -8,13 +8,9 @@ public class Connection {
     public Connection(){
         dataSource = new BasicDataSource();
         dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUrl("jdbc:h2:file:./time-db");
+        dataSource.setUrl("jdbc:h2:file:./livraria-db");
         dataSource.setUsername("sa");
         dataSource.setPassword("");
-        // dataSource.setDriverClassName("com.mysql.cj.jbdc.Driver");
-        // dataSource.setUrl("jbdc:mysql://localhost:3360//nome-do-banco");
-        // dataSource.setUsername("seu-usuário")
-        // dataSource.setPassword("sua-senha")
     }
 
     public BasicDataSource getDataSource(){

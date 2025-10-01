@@ -22,6 +22,9 @@ public class TesteBanco {
                 "('Santos', 40)," +
                 "('Paysandu', 100);");
 
+        String sqlInsert = "INSERT INTO Time (nome, qtdjogadores) VALUES (?, ?);";
+        con.update(sqlInsert, "Corinthians", 4);
+        
         List times = con.queryForList("SELECT * FROM Time;");
         System.out.println("Exibindo o resultado do Select de times:");
         System.out.println(times);
