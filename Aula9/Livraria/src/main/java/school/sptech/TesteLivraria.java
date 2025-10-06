@@ -26,7 +26,7 @@ public class TesteLivraria {
             System.out.println("1) Cadastrar livro");
             System.out.println("2) Exibir livros");
             System.out.println("3) Atualizar livro");
-            System.out.println("4) Renomear livro");
+            System.out.println("4) Remover livro");
             System.out.println("5) Buscar por nome");
             System.out.println("6) Sair\n");
 
@@ -58,7 +58,7 @@ public class TesteLivraria {
                 System.out.println("Inserir novo preço do livro: ");
                 Double preco = leitor.nextDouble();
 
-                String sqlUpdate = "UPDATE Livraria SET nome = ? AND preco = ? WHERE id = ?";
+                String sqlUpdate = "UPDATE Livraria SET nome = ?, preco = ? WHERE id = ?";
                 con.update(sqlUpdate, nome, preco, id);
             } else if (opcao == 4){
                 System.out.println("Inserir id do livro: ");
@@ -70,8 +70,16 @@ public class TesteLivraria {
                 System.out.println("Inserir novo nome do livro: ");
                 String nome = leitor.nextLine();
 
-                String sqlSelect = "SELECT * FROM Livraria WHERE nome = ?";
-                con.update(sqlSelect, nome);
+                String sqlSelect = "SELECT * FROM Livraria WHERE nome LIKE ?";
+                String qualquerNome = "%" + nome + "%";
+
+                List<Livraria> listaLivros = con.query("SELECT * FROM Livraria WHERE nome LIKE ?",
+                        new BeanPropertyRowMapper(Livraria.class), qualquerNome);
+
+                System.out.println("Exibindo livros:");
+                for (int i = 0; i < listaLivros.size(); i++) {
+                    System.out.println(listaLivros.get(i));
+                }
             } else if (opcao == 6) {
                 continua = false;
             } else {
