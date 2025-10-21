@@ -9,13 +9,14 @@ public class VendedorComissaoMaisFixo extends VendedorComissao {
     }
 
     @Override
-    public Double calcularSalario() {
-        return (vendas * taxa) + salarioFixo;
-    }
-
-    @Override
     public String toString() {
-        return "VendedorComissaoMaisFixo [codigo=" + codigo + ", nome=" + nome + ", vendas=" + vendas + ", taxa=" + taxa + ", salarioFixo=" + salarioFixo + ", salarioTotal=" + calcularSalario() + "]";
+        return "VendedorComissaoMaisFixo{" +
+                ", codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                ", vendas=" + vendas +
+                ", taxa=" + taxa +
+                "salarioFixo=" + salarioFixo +
+                "} " + super.toString();
     }
 
     public Double getSalarioFixo() {

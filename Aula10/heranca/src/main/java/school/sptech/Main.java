@@ -14,18 +14,14 @@ public class Main {
         System.out.println(vf1.toString());
         System.out.println("Salario de v2: R$ " + String.format("%.2f", v2.calcularSalario()));
         System.out.println("Salario de vf2: R$ " + String.format("%.2f", vf2.calcularSalario()));
-        System.out.println("------------------------------------------\n");
-
 
         DepartamentoComercial dpto = new DepartamentoComercial("SP");
-
         dpto.adicionaVendedor(v1);
         dpto.adicionaVendedor(v2);
         dpto.adicionaVendedor(vf1);
         dpto.adicionaVendedor(vf2);
 
         dpto.adicionaVendedor(new VendedorComissao(103, "Carlos Oliveira", 20000.00, 0.25));
-
         dpto.exibeTodos();
         System.out.println("\n");
 
